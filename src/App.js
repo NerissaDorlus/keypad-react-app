@@ -1,22 +1,105 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [digit, setDigit] = useState("");
+
+  const backButton = () => {
+    setDigit(digit.slice(0, digit.length - 1));
+  };
+
+  const validateButton = () => {
+    digit === "9876" ? setDigit("Come In") : setDigit("❌Try agian❌");
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>{digit}</h1>
+
+        <section>
+          <button
+            onClick={() => {
+              if (digit.length < 4) setDigit(digit + "1");
+            }}
+          >
+            1
+          </button>
+          <button
+            onClick={() => {
+              if (digit.length < 4) setDigit(digit + "2");
+            }}
+          >
+            2
+          </button>
+          <button
+            onClick={() => {
+              if (digit.length < 4) setDigit(digit + "3");
+            }}
+          >
+            3
+          </button>
+        </section>
+
+        <section>
+          <button
+            onClick={() => {
+              if (digit.length < 4) setDigit(digit + "4");
+            }}
+          >
+            4
+          </button>
+          <button
+            onClick={() => {
+              if (digit.length < 4) setDigit(digit + "5");
+            }}
+          >
+            5
+          </button>
+          <button
+            onClick={() => {
+              if (digit.length < 4) setDigit(digit + "6");
+            }}
+          >
+            6
+          </button>
+        </section>
+
+        <section>
+          <button
+            onClick={() => {
+              if (digit.length < 4) setDigit(digit + "7");
+            }}
+          >
+            7
+          </button>
+          <button
+            onClick={() => {
+              if (digit.length < 4) setDigit(digit + "8");
+            }}
+          >
+            8
+          </button>
+          <button
+            onClick={() => {
+              if (digit.length < 4) setDigit(digit + "9");
+            }}
+          >
+            9
+          </button>
+        </section>
+
+        <section>
+          <button onClick={backButton}>⬅️</button>
+          <button
+            onClick={() => {
+              if (digit.length < 4) setDigit(digit + "0");
+            }}
+          >
+            0{" "}
+          </button>
+          <button onClick={validateButton}>✅</button>
+        </section>
       </header>
     </div>
   );
