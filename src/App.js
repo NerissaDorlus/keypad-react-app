@@ -9,13 +9,15 @@ function App() {
   };
 
   const validateButton = () => {
-    digit === "9876" ? setDigit("Come In") : setDigit("❌Try agian❌");
+    digit === "9876" ? setDigit("Come In!") : setDigit("❌Try again❌");
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>{digit}</h1>
+        <h1>Keypad</h1>
+        <br></br>
+        <h2>{digit}</h2>
 
         <section>
           <button
